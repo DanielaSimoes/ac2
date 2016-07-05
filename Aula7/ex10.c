@@ -7,13 +7,6 @@ char getc(void);
 int main(void){
   configUart(115200, 'N', 1);
   EnableInterrupts();
-  U1RXREG = 1;
-
-  IEC0bits.U1RXIE = 1;
-  IEC0bits.U1TXIE = 1;
-  IEC0bits.U1EIE = 1;
-  IFS0bits.U1RXIF = 0;
-  IPC6bits.U1IP = 1;
 
   while(1);
 }

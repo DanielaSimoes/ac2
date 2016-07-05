@@ -90,8 +90,8 @@ Linker script and memory map
 
 LOAD ex7.o
 LOAD delay.o
+LOAD toBcd.o
 LOAD send2displays.o
-LOAD toBCD.o
 LOAD /opt/pic32mx/lib/libdetpic32.a
 LOAD /opt/pic32mx/lib/gcc/pic32mx/3.4.4/libgcc.a
                 0x00000400                PROVIDE (_min_stack_size, 0x400)
@@ -406,10 +406,10 @@ LOAD /opt/pic32mx/lib/startup.o
                 0x9d001400                main
  .text          0x9d001690       0x48 delay.o
                 0x9d001690                delay
- .text          0x9d0016d8       0xec send2displays.o
-                0x9d0016d8                send2displays
- .text          0x9d0017c4       0x3c toBCD.o
-                0x9d0017c4                toBCD
+ .text          0x9d0016d8       0x3c toBcd.o
+                0x9d0016d8                toBCD
+ .text          0x9d001714       0xec send2displays.o
+                0x9d001714                send2displays
  .text          0x9d001800      0x9b0 /opt/pic32mx/lib/libdetpic32.a(xprintf.o)
                 0x9d001828                xprintf
  .text          0x9d0021b0      0x3e0 /opt/pic32mx/lib/gcc/pic32mx/3.4.4/libgcc.a(_addsub_df.o)
@@ -580,8 +580,8 @@ LOAD /opt/pic32mx/lib/startup.o
  *(.pdr)
  .pdr           0x00000000       0x20 ex7.o
  .pdr           0x00000020       0x20 delay.o
- .pdr           0x00000040       0x20 send2displays.o
- .pdr           0x00000060       0x20 toBCD.o
+ .pdr           0x00000040       0x20 toBcd.o
+ .pdr           0x00000060       0x20 send2displays.o
  .pdr           0x00000080       0x40 /opt/pic32mx/lib/libdetpic32.a(xprintf.o)
  .pdr           0x000000c0       0x60 /opt/pic32mx/lib/gcc/pic32mx/3.4.4/libgcc.a(_addsub_df.o)
  .pdr           0x00000120       0x20 /opt/pic32mx/lib/gcc/pic32mx/3.4.4/libgcc.a(_mul_df.o)
@@ -622,8 +622,8 @@ LOAD /opt/pic32mx/lib/startup.o
  *(.comment)
  .comment       0x00000000       0x4d ex7.o
  .comment       0x0000004d       0x4d delay.o
- .comment       0x0000009a       0x4d send2displays.o
- .comment       0x000000e7       0x4d toBCD.o
+ .comment       0x0000009a       0x4d toBcd.o
+ .comment       0x000000e7       0x4d send2displays.o
  .comment       0x00000134       0x4d /opt/pic32mx/lib/libdetpic32.a(xprintf.o)
  .comment       0x00000181       0x4d /opt/pic32mx/lib/gcc/pic32mx/3.4.4/libgcc.a(_addsub_df.o)
  .comment       0x000001ce       0x4d /opt/pic32mx/lib/gcc/pic32mx/3.4.4/libgcc.a(_mul_df.o)
